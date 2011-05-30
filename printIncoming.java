@@ -14,13 +14,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.Scanner;
-/*TODO:
- * Redo all methods so that they return booleans
- * Fix pingout-reconnect
- * Fix the automatic channeljoin instead of a "Thread.sleep(3000)"
- * Add an "^ Old! ^" feature for links
- * Add SSL support (awesome!)
- */
 
 public class printIncoming extends Thread{
 	//The socket connected to the server
