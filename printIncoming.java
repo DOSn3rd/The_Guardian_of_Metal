@@ -201,6 +201,12 @@ public class printIncoming extends Thread{
 					sendNotice(nick, "!spotify - Want some music, well, here you go.");
 					sendNotice(nick, "!bored - Supplies the bored commandgiver a randomized link.");
 					sendNotice(nick, "WARNING! The links that the bot supplies aren't in any way filtered by content and can be NSFW. Neiter the bot nor it's maker (DOSn3rd) takes any responsibility of the contents of the supplied links. Use common sense and be cautious.");
+				}else if(command[0].equalsIgnoreCase("!coin")){
+					long rand = Math.round(Math.random());
+					String headstails = "";
+					if(rand == 1) headstails = "heads.";
+					else headstails = "tails.";
+					sendMsg(channel, "Coin toss says "+ headstails);
 				}else if(command[0].equalsIgnoreCase("!addadmin") && isLoggedIn(nick)){
 					try{
 						loginlist.add(command[1]+"#"+command[2]+"#0");
