@@ -284,9 +284,8 @@ public class printIncoming extends Thread{
 					String[] tokens = message.split(" ");
 					for(int i = 0; i < tokens.length; i++){
 						if(tokens[i].toLowerCase().startsWith("http")){
-							sendMsg(channel, getHtmlTag("title", getHtmlCode(tokens[i])));
-
 							addlink(tokens[i]);
+							sendMsg(channel, getHtmlTag("title", getHtmlCode(tokens[i])));
 						}
 					}
 				}
@@ -474,7 +473,9 @@ public class printIncoming extends Thread{
 					if(linksc.nextLine().equals(link)) exists = true;
 				}
 
-				if(exists){}else{
+				if(exists){
+					sendMsg(channel, "^ Old! ^");
+				}else{
 					spotifyw.write(link+"\n");
 					spotifyw.flush();
 					spotifylist.add(link);
@@ -488,7 +489,9 @@ public class printIncoming extends Thread{
 				while(linksc.hasNextLine()){
 					if(linksc.nextLine().toLowerCase().contains(link.toLowerCase())) exists = true;
 				}
-				if(!exists){
+				if(exists){
+					sendMsg(channel, "^ Old! ^");
+				}else{
 					linkw.write(link+"\n");
 					linkw.flush();
 					linklist.add(link);
